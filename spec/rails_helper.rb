@@ -68,6 +68,6 @@ VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
   config.hook_into :webmock
   config.filter_sensitive_data('Private_mapquest_key') { ENV['mapquest_key'] }
-  config.filter_sensitive_data('Private_weather_key') { ENV['weather_key'] }
+  config.filter_sensitive_data('Private_unsplash_key') { ENV['unsplash_key'] }
   config.configure_rspec_metadata!
 end
