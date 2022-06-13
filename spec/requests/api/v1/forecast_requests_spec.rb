@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'the forecast endpoint', :vcr do
-  it 'gets weather for a given city' do
+RSpec.describe 'the forecast endpoint' do
+  it 'gets weather for a given city', :vcr do
     get '/api/v1/forecast', params: { location: 'richmond,va' }
     forecast = JSON.parse(response.body, symbolize_names: true)
 
@@ -14,7 +14,9 @@ RSpec.describe 'the forecast endpoint', :vcr do
     expect(forecast[:data]).to have_key(:attributes)
     expect(forecast[:data][:attributes]).to have_key(:current_weather)
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:datetime)
-    expect(forecast[:data][:attributes][:current_weather]).to have_key(:temp)
+    expect(forecast[:data][:attributes][:current_weather]).to have_key(:sunrise)
+    expect(forecast[:data][:attributes][:current_weather]).to have_key(:sunset)
+    expect(forecast[:data][:attributes][:current_weather]).to have_key(:temperature)
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:feels_like)
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:humidity)
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:uvi)
@@ -23,10 +25,11 @@ RSpec.describe 'the forecast endpoint', :vcr do
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:icon)
     expect(forecast[:data][:attributes]).to have_key(:daily_weather)
     # Daily weather is an array of hashes, each hash is a day :
+    expect(forecast[:data][:attributes][:daily_weather]).to be_a Array
     expect(forecast[:data][:attributes][:daily_weather].count).to eq(5)
     expect(forecast[:data][:attributes][:daily_weather][0]).to be_a Hash
     # Daily weather needs 7 attributes :
-    expect(forecast[:data][:attributes][:daily_weather][0]).to have_key(:datetime)
+    expect(forecast[:data][:attributes][:daily_weather][0]).to have_key(:date)
     expect(forecast[:data][:attributes][:daily_weather][0]).to have_key(:sunrise)
     expect(forecast[:data][:attributes][:daily_weather][0]).to have_key(:sunset)
     expect(forecast[:data][:attributes][:daily_weather][0]).to have_key(:max_temp)
@@ -37,10 +40,12 @@ RSpec.describe 'the forecast endpoint', :vcr do
     # checking for absence of things we dont want :
     expect(forecast[:data][:attributes]).to_not have_key(:minutely)
     # Hourly weather is an array of 8 elements for the 8 hours we want :
+    expect(forecast[:data][:attributes][:hourly_weather]).to be_a Array
     expect(forecast[:data][:attributes][:hourly_weather].count).to eq(8)
+    expect(forecast[:data][:attributes][:hourly_weather][0]).to be_a Hash
     # Each hour needs time, temp, conditions, and icon :
     expect(forecast[:data][:attributes][:hourly_weather][0]).to have_key(:time)
-    expect(forecast[:data][:attributes][:hourly_weather][0]).to have_key(:temp)
+    expect(forecast[:data][:attributes][:hourly_weather][0]).to have_key(:temperature)
     expect(forecast[:data][:attributes][:hourly_weather][0]).to have_key(:conditions)
     expect(forecast[:data][:attributes][:hourly_weather][0]).to have_key(:icon)
     # Checking for things we dont want in current weather :
