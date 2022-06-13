@@ -6,7 +6,8 @@ RSpec.describe 'the open weather forecast service' do
     expect(conn).to be_a(Faraday::Connection)
   end
 
-  it 'returns forecast data from lat and long coordinates', :vcr do
+  it 'returns forecast data from lat and long coordinates' do
+    VCR.use_cassette('returns_forecast_data_from_lat_and_long_coordinates') do
     data = { :lat => 37.541290, :lon => -77.434769 }
     forecast = OpenWeatherService.weather_data(data[:lat], data[:lon])
 
@@ -36,6 +37,7 @@ RSpec.describe 'the open weather forecast service' do
       expect(hour).to have_key(:temp)
       expect(hour[:weather][0]).to have_key(:description)
       expect(hour[:weather][0]).to have_key(:icon)
+    end
     end
   end
 end

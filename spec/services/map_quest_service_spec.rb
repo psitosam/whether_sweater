@@ -6,8 +6,9 @@ RSpec.describe 'the mapquest service' do
     expect(conn).to be_a(Faraday::Connection)
   end
 
-  it 'returns latitude and longitude', :vcr do
+  it 'returns latitude and longitude' do
     coords = MapQuestService.location_data("Washington,DC")
+    VCR.use_cassette('returns_latitude_and_longitude') do
 
     expect(coords).to be_a Hash
     expect(coords[:results]).to be_a Array
@@ -17,5 +18,6 @@ RSpec.describe 'the mapquest service' do
     expect(coords[:results][0][:locations][0][:latLng]).to have_key(:lng)
     expect(coords[:results][0][:locations][0][:latLng][:lat]).to eq(38.892062)
     expect(coords[:results][0][:locations][0][:latLng][:lng]).to eq(-77.019912)
+    end
   end
 end
