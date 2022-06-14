@@ -5,7 +5,7 @@ class Api::V1::BackgroundsController < ApplicationController
       image = UnsplashImageFacade.find_image(params[:location])
       render json: BackgroundSerializer.format_background(image)
     else
-      render json: { error: 'bad request' }, status: 400
+      render json: { data: { message: 'bad request' } }, status: 400
     end
   end
 end
