@@ -24,5 +24,9 @@ RSpec.describe 'the background image endpoint' do
 
     expect(response).to_not be_successful
     expect(response.status).to eq(400)
+
+    error = JSON.parse(response.body, symbolize_names: true)
+
+    expect(error[:data][:message]).to eq('bad request')
   end
 end

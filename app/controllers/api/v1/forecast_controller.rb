@@ -12,7 +12,7 @@ class Api::V1::ForecastController < ApplicationController
     if params[:location]
       @location = MapQuestFacade.find_coordinates(params[:location])
     else
-      render json: { error: 'bad request' }, status: 404
+      render json: { data: { message: 'bad request'} }, status: 400
     end
   end
 end

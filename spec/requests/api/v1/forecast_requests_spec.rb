@@ -79,6 +79,10 @@ RSpec.describe 'the forecast endpoint' do
   it 'returns an error when given invalid params', :vcr do
     get '/api/v1/forecast', params: { weather: "richmond,va" }
 
-    expect(response.status).to eq(404)
+    expect(response.status).to eq(400)
+
+    error = JSON.parse(response.body, symbolize_names: true)
+
+    expect(error[:data][:message]).to eq('bad request')
   end
 end

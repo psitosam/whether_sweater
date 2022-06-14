@@ -28,8 +28,12 @@ RSpec.describe 'the user request' do
       "password": "pass",
       "password_confirmation": "password"
     }
-    post '/api/v1/users', params: JSON.generate(data)
+    post '/api/v1/users', params: data
 
     expect(response.status).to eq(400)
+
+    error = JSON.parse(response.body, symbolize_names: true)
+
+    expect(error[:data][:message]).to eq('Passwords must match')
   end
 end
