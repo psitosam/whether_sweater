@@ -9,6 +9,7 @@ RSpec.describe 'the brewery service' do
   it 'returns breweries from a given location' do
     location = "richmond"
     response = BreweryService.get_breweries(location)
+    VCR.use_cassette('returns_breweries_from_a_given_location') do
 
     expect(response).to be_a Array
     response.each do |brewery|
@@ -18,5 +19,6 @@ RSpec.describe 'the brewery service' do
       expect(brewery).to have_key(:city)
       expect(brewery).to have_key(:state)
     end
+  end 
   end
 end

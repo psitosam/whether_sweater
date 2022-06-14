@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openbrewerydb.org/breweries?by_city=richmond
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '399'
+      Cache-Control:
+      - public, max-age=86400
+      Cf-Cache-Status:
+      - HIT
+      Cf-Ray:
+      - 71b4383c667537f9-IAD
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"24120add279381eea4e14f71f32e2d16"
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=anLyXYNr2oqgL4RxK97BD%2FWKWJZEGIjKxey57TnFCOwaGA8yyGWgWXXytA%2FPs%2BPkdl2HIGsSYF85EwhYwSWy0ccW645fxe6Aj%2BgMdTD8iWkga7akuaTfoypnnzARuFm6K%2FHsT4cF%2BAvqxh6r23g4UkSywDk%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept, Origin, Accept-Encoding
+      Via:
+      - 1.1 vegur
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - abd88049-19f5-43ad-92b4-d1a325db7aa3
+      X-Runtime:
+      - '0.030836'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 14 Jun 2022 15:50:05 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"origin-brewer-richmond","name":"Origin Brewer","brewery_type":"micro","street":null,"address_2":null,"address_3":null,"city":"Richmond","state":"California","county_province":null,"postal_code":"94805-2121","country":"United
+        States","longitude":"-122.3477486","latitude":"37.9357576","phone":null,"website_url":null,"updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"ardent-craft-ales-richmond","name":"Ardent
+        Craft Ales","brewery_type":"micro","street":"3200 W Leigh St","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23230-4410","country":"United
+        States","longitude":"-77.47201237","latitude":"37.5684425","phone":"8043591605","website_url":"http://www.ardentcraftales.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"armistice-brewing-company-richmond","name":"Armistice
+        Brewing Company","brewery_type":"micro","street":"845 Marina Bay Pkwy Suite
+        1","address_2":null,"address_3":null,"city":"Richmond","state":"California","county_province":null,"postal_code":"94804-6420","country":"United
+        States","longitude":"-122.3482740023689","latitude":"37.91966864488132","phone":"5102304966","website_url":"http://www.armisticebrewing.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"ashuelot-brewing-company-richmond","name":"Ashuelot
+        Brewing Company","brewery_type":"micro","street":"101 Old County Rd","address_2":null,"address_3":null,"city":"Richmond","state":"New
+        Hampshire","county_province":null,"postal_code":"03470-4918","country":"United
+        States","longitude":"-72.23236816","latitude":"42.75946232","phone":null,"website_url":null,"updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"barley-johns-brewpub-new-richmond","name":"Barley
+        Johns Brewpub","brewery_type":"brewpub","street":"1280 Madison Ave","address_2":null,"address_3":null,"city":"New
+        Richmond","state":"Wisconsin","county_province":null,"postal_code":"54017-2236","country":"United
+        States","longitude":null,"latitude":null,"phone":"7152464677","website_url":"http://www.barleyjohnsbrewery.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"basic-city-beer-co-southside-rva-richmond","name":"Basic
+        City Beer Co. (Southside RVA)","brewery_type":"micro","street":"212 W 6th
+        St","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23224","country":"United
+        States","longitude":null,"latitude":null,"phone":"8044474735","website_url":"https://www.basiccitybeer.com/rva-map","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"benoit-casper-brewing-richmond","name":"Benoit-Casper
+        Brewing","brewery_type":"micro","street":"1201 Pennsylvania Ave Ste E","address_2":null,"address_3":null,"city":"Richmond","state":"California","county_province":null,"postal_code":"94801-2300","country":"United
+        States","longitude":"-122.35786372935385","latitude":"37.94244028509328","phone":"4086953449","website_url":"http://www.bcbrewing.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"bingo-beer-company-richmond","name":"Bingo
+        Beer Company","brewery_type":"planning","street":"2900 W Broad St","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23230","country":"United
+        States","longitude":null,"latitude":null,"phone":"8043975226","website_url":"http://www.bingorva.com/","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"canon-and-draw-brewing-company-richmond","name":"Canon
+        \u0026 Draw Brewing Company","brewery_type":"micro","street":"1527 W Main
+        St","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23220","country":"United
+        States","longitude":"-77.46012854","latitude":"37.54707897","phone":"8043530536","website_url":"http://www.canonanddraw.beer","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"castleburg-brewery-richmond","name":"Castleburg
+        Brewery","brewery_type":"micro","street":"1626 Ownby Ln","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23220-1317","country":"United
+        States","longitude":null,"latitude":null,"phone":"8043531256","website_url":"http://www.castleburgbrewery.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"dogtown-brewing-richmond","name":"Dogtown
+        Brewing","brewery_type":"brewpub","street":"1209 Hull St","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23224","country":"United
+        States","longitude":null,"latitude":null,"phone":"8047242337","website_url":"https://www.dogtownbrewingco.com/","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"dreaming-creek-brewery-richmond","name":"Dreaming
+        Creek Brewery","brewery_type":"micro","street":"109 E Irvine St","address_2":null,"address_3":null,"city":"Richmond","state":"Kentucky","county_province":null,"postal_code":"40475-1521","country":"United
+        States","longitude":"-84.29111565","latitude":"37.747285","phone":null,"website_url":"http://www.dreamingcreekbrewery.beer","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"east-brother-beer-company-richmond","name":"East
+        Brother Beer Company","brewery_type":"micro","street":"1001 Canal Blvd # C-2","address_2":null,"address_3":null,"city":"Richmond","state":"California","county_province":null,"postal_code":"94804-3533","country":"United
+        States","longitude":"-122.37540668887605","latitude":"37.9177258303527","phone":"5102304081","website_url":"http://www.eastbrotherbeer.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"fulbrook-ale-works-richmond","name":"Fulbrook
+        Ale Works","brewery_type":"micro","street":"1125 Farm To Market 359","address_2":null,"address_3":null,"city":"Richmond","state":"Texas","county_province":null,"postal_code":"77406","country":"United
+        States","longitude":null,"latitude":null,"phone":"8329809675","website_url":"http://Fulbrookaleworks.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"garden-grove-brewing-company-richmond","name":"Garden
+        Grove Brewing Company","brewery_type":"micro","street":"3445 W Cary St","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23221-2726","country":"United
+        States","longitude":"-77.48597999","latitude":"37.55495022","phone":"8043386029","website_url":"http://www.gardengrovebrewing.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"hardywood-park-craft-brewery-richmond","name":"Hardywood
+        Park Craft Brewery","brewery_type":"micro","street":"2408 Ownby Ln","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23220-1319","country":"United
+        States","longitude":null,"latitude":null,"phone":"8044202420","website_url":"http://www.hardywood.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"hardywood-west-creek-richmond","name":"Hardywood
+        West Creek","brewery_type":"micro","street":"820 Sanctuary Trail Dr","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23238","country":"United
+        States","longitude":null,"latitude":null,"phone":"8044183548","website_url":"http://hardywood.com/visit-us/westcreek/","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"isley-brewing-company-richmond","name":"Isley
+        Brewing Company","brewery_type":"micro","street":"1715 Summit Ave","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23230-4515","country":"United
+        States","longitude":"-77.46838631","latitude":"37.56890085","phone":"8047162132","website_url":"http://www.isleybrewingcompany.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"kindred-spirit-brewing-richmond","name":"Kindred
+        Spirit Brewing","brewery_type":"brewpub","street":"12830 West Creek Pkwy Ste
+        J","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23238-1126","country":"United
+        States","longitude":null,"latitude":null,"phone":"8047080309","website_url":"http://www.kindredspiritbrewing.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"},{"id":"legend-brewing-co-richmond","name":"Legend
+        Brewing Co","brewery_type":"micro","street":"321 W 7th St","address_2":null,"address_3":null,"city":"Richmond","state":"Virginia","county_province":null,"postal_code":"23224-2307","country":"United
+        States","longitude":"-77.4429749","latitude":"37.5266924","phone":"8042328871","website_url":"http://www.legendbrewing.com","updated_at":"2021-10-23T02:24:55.243Z","created_at":"2021-10-23T02:24:55.243Z"}]'
+  recorded_at: Tue, 14 Jun 2022 15:50:05 GMT
+recorded_with: VCR 6.1.0
