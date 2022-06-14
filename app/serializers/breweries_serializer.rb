@@ -11,19 +11,13 @@ class BreweriesSerializer
         "summary": forecast.current.conditions,
         "temperature": forecast.current.temperature
       },
-      "breweries": [
+      "breweries": breweries.shift(quantity).map do |brewery|
         {
-          "id": 10129,
-          "name": "Denver Beer Co Olde Town Arvada",
-          "brewery_type": "micro"
-        },
-        {
-          "id": 12906,
-          "name": "New Image Brewing Co",
-          "brewery_type": "brewpub"
-        },
-        { ... same format for breweries 3, 4 and 5 ... }
-      ]
+          "id": brewery[:id],
+          "name": brewery[:name],
+          "brewery_type": brewery[:brewery_type]
+        }
+      end
     }
   }
 }
