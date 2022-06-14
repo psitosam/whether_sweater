@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'the forecast endpoint' do
-  it 'gets weather for a given city', :vcr do
+  it 'gets weather for a given city' do
     get '/api/v1/forecast', params: { location: 'richmond,va' }
+    VCR.use_cassette('gets_weather_for_a_given_city') do
     forecast = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
@@ -72,6 +73,7 @@ RSpec.describe 'the forecast endpoint' do
     expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:wind_deg)
     expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:wind_speed)
     expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:wind_gust)
+    end
   end
 
   it 'returns an error when given invalid params', :vcr do

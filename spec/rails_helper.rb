@@ -61,6 +61,13 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+end
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
 
 VCR.configure do |config|
@@ -70,5 +77,6 @@ VCR.configure do |config|
   config.filter_sensitive_data('key') { ENV['mapquest_key'] }
   config.filter_sensitive_data('client_id') { ENV['unsplash_key'] }
   config.filter_sensitive_data('app_id') { ENV['weather_key'] }
+  config.default_cassette_options = {re_record_interval: 1.day}
   config.configure_rspec_metadata!
 end
