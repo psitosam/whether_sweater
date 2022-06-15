@@ -12,7 +12,6 @@ class RoadTrip
               :arrival_date_time
 
   def initialize(data, forecast)
-
     @data           = data
     @forecast       = forecast
     @start_city     = data[:route][:locations][0][:adminArea5]
@@ -44,7 +43,6 @@ class RoadTrip
   end
 
   def destination_forecast
-    require 'pry'; binding.pry
     if @travel_hours < 48
       destination_forecast = forecast[:hourly][@travel_hours -1][:weather][0][:description]
     elsif @travel_hours > 48
