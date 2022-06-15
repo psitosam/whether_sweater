@@ -4,13 +4,11 @@ class Api::V1::RoadTripsController < ApplicationController
   def create
     to = params[:destination]
     from = params[:origin]
-    road_trip = RoadTripFacade.new_road_trip(to, from)
-    if road_trip[:info][:statuscode] == 402
+    road_trip = RoadTripFacade.route(to, from)
+    if road_trip.is_a?(RoadTrip)
+      render json: RoadTripSerializer.road_trip_new(road_trip)
+    else
       render json: SadpathSerializer.bad_road_trip(to, from)
-    elsif
-      coordinates = road_trip[:route][:locations][1][:latLng]
-      forecast = OpenWeatherFacade.find_forecast(latLng[:lat], latLng[:lng])
-      render json: RoadTripSerializer.road_trip_new(road_trip, forecast)
     end
   end
 
