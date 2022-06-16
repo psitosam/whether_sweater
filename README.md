@@ -405,7 +405,7 @@ body:
 
 
 
-## **Contributors** 
+## **Contributors**
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -416,7 +416,7 @@ body:
 
    <td align="center"><a href="https://github.com/psitosam"><img src="https://avatars.githubusercontent.com/u/95240894?s=400&u=ac9638ff6700dfed2d28d9f9df934fcd1be02635&v=4" width="100px;" alt=""/><br /><sub><b>Alex (he/him)</b></sub></a><br />
 
-    </tr>
+    nice one
 </table>
 
 <!-- markdownlint-restore -->
