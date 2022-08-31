@@ -2,9 +2,9 @@ class RoadTripFacade
 
   def self.route(to, from)
     data = MapQuestService.get_route(to, from)
-    # require 'pry'; binding.pry
-
+    
     if data[:info][:statuscode] != 402
+
       destination = MapQuestService.location_data(to)
       coords = destination[:results][0][:locations][0][:latLng]
       forecast = OpenWeatherService.weather_data(coords[:lat], coords[:lng])

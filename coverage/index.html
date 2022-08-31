@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-06-16T10:34:58-04:00">2022-06-16T10:34:58-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-31T14:46:49-04:00">2022-08-31T14:46:49-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  97.99%
+  98.0%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.86
+         1.85
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>646</b> relevant lines,
-    <span class="green"><b>633</b> lines covered</span> and
+    <b>650</b> relevant lines,
+    <span class="green"><b>637</b> lines covered</span> and
     <span class="red"><b>13</b> lines missed. </span>
     (<span class="green">
-  97.99%
+  98.0%
 </span>
 )
   </div>
@@ -94,12 +94,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7503a47a0c319a2b48fd6e4ac9d292e2974953b3" class="src_link" title="app/controllers/api/v1/road_trips_controller.rb">app/controllers/api/v1/road_trips_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">90.91 %</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">10</td>
+            <td class="green strong cell--number t-file__coverage">92.86 %</td>
+            <td class="cell--number">42</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">13</td>
             <td class="cell--number">1</td>
-            <td class="cell--number">1.27</td>
+            <td class="cell--number">1.07</td>
             
           </tr>
         
@@ -116,12 +116,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1e8a9f386965f00717a2215669185f8247fa6437" class="src_link" title="app/controllers/api/v1/users_controller.rb">app/controllers/api/v1/users_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">85.71 %</td>
+            <td class="yellow strong cell--number t-file__coverage">86.67 %</td>
             <td class="cell--number">22</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">12</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">13</td>
             <td class="cell--number">2</td>
-            <td class="cell--number">1.21</td>
+            <td class="cell--number">1.20</td>
             
           </tr>
         
@@ -161,7 +161,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#062dff724d1ef4abdd93dc4fc565844b3c156599" class="src_link" title="app/facades/road_trip_facade.rb">app/facades/road_trip_facade.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">22</td>
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
@@ -1122,7 +1122,7 @@
     <h3>app/controllers/api/v1/road_trips_controller.rb</h3>
     <h4>
       <span class="green">
-  90.91%
+  92.86%
 </span>
 
       lines covered
@@ -1131,8 +1131,8 @@
     
 
     <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>14</b> relevant lines.
+      <span class="green"><b>13</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
 
@@ -1172,62 +1172,62 @@
 
             
 
+            <code class="ruby">  before_action :require_valid_api_key!</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  def create</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="4">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    to = params[:destination]</code>
+            <code class="ruby">    to, from = params[:destination], params[:origin]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="5">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    from = params[:origin]</code>
+            <code class="ruby">    result = RoadTripFacade.route(to, from)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="6">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    api_key = params[:api_key]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="8">
             
             
 
             
 
-            <code class="ruby">    # require &#39;pry&#39;; binding.pry</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="8">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    if User.find_by(api_key: api_key)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1238,7 +1238,7 @@
 
             
 
-            <code class="ruby">      road_trip = RoadTripFacade.route(to, from)</code>
+            <code class="ruby">    if result != [] </code>
           </li>
         </div>
       
@@ -1249,56 +1249,12 @@
 
             
 
-            <code class="ruby">      if road_trip.is_a?(RoadTrip)</code>
+            <code class="ruby">      render json: RoadTripSerializer.road_trip_new(result)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        render json: RoadTripSerializer.road_trip_new(road_trip)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">      render json: SadpathSerializer.bad_road_trip(to, from)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -1309,13 +1265,57 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="12">
+            
             
 
             
 
-            <code class="ruby">      render json: SadpathSerializer.bad_api_key, status: 401</code>
+            <code class="ruby">      render json: SadpathSerializer.bad_road_trip(to, from)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">    end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">    # to = params[:destination]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">    # from = params[:origin]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">    # api_key = params[:api_key]</code>
           </li>
         </div>
       
@@ -1326,7 +1326,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    # require &#39;pry&#39;; binding.pry</code>
           </li>
         </div>
       
@@ -1337,12 +1337,265 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    # if User.find_by(api_key: api_key)</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">    #   road_trip = RoadTripFacade.route(to, from)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">    #   if road_trip.is_a?(RoadTrip)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">    #     render json: RoadTripSerializer.road_trip_new(road_trip)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    #   else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">    #   render json: SadpathSerializer.bad_road_trip(to, from)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">    #   end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">    # else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">    #   render json: SadpathSerializer.bad_api_key, status: 401</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">    # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def require_valid_api_key!</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="34">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    unless signed_in?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      render json: SadpathSerializer.bad_api_key, status: 401</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">    end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">  end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def signed_in?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="40">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    User.exists?(api_key: params[:api_key])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">  end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
@@ -1525,7 +1778,7 @@
     <h3>app/controllers/api/v1/users_controller.rb</h3>
     <h4>
       <span class="yellow">
-  85.71%
+  86.67%
 </span>
 
       lines covered
@@ -1534,8 +1787,8 @@
     
 
     <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>15</b> relevant lines.
+      <span class="green"><b>13</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
 
@@ -1679,13 +1932,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      # user.update(api_key: SecureRandom.hex(15))</code>
+            
+
+            <code class="ruby">      user.update(api_key: SecureRandom.hex(15))</code>
           </li>
         </div>
       
@@ -2177,24 +2430,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="3">
+            
             
 
             
 
-            <code class="ruby">  def self.route(to, from)</code>
+            <code class="ruby">  # def self.valid?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="4">
-            <span class="hits">4</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">    data = MapQuestService.get_route(to, from)</code>
+            <code class="ruby">  #   data = MapQuestService.get_route(to, from)</code>
           </li>
         </div>
       
@@ -2205,7 +2458,7 @@
 
             
 
-            <code class="ruby">    # require &#39;pry&#39;; binding.pry</code>
+            <code class="ruby">  #   if data[:info][:statuscode] != 402</code>
           </li>
         </div>
       
@@ -2216,12 +2469,56 @@
 
             
 
+            <code class="ruby">  # end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def self.route(to, from)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="9">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    data = MapQuestService.get_route(to, from)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">    </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="11">
             <span class="hits">4</span>
             
 
@@ -2232,7 +2529,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="8">
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="13">
             <span class="hits">3</span>
             
 
@@ -2243,7 +2551,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="9">
+          <li class="covered" data-hits="3" data-linenumber="14">
             <span class="hits">3</span>
             
 
@@ -2254,7 +2562,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="10">
+          <li class="covered" data-hits="3" data-linenumber="15">
             <span class="hits">3</span>
             
 
@@ -2265,7 +2573,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="11">
+          <li class="covered" data-hits="3" data-linenumber="16">
             <span class="hits">3</span>
             
 
@@ -2276,7 +2584,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -2287,7 +2595,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
+          <li class="covered" data-hits="1" data-linenumber="18">
             <span class="hits">1</span>
             
 
@@ -2298,7 +2606,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
@@ -2309,7 +2617,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -2320,7 +2628,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -2331,7 +2639,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="22">
             
             
 
